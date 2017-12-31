@@ -20,8 +20,6 @@
 18. Mostrar que es una tarjeta inválida si su residuo no es 0.
 19. Llamar a función. Probar con 3625102593804.
 
-![Diagrama de Flujo](assets/Tarjeta de Crédito.svg)
-
-
+![Diagrama de Flujo](assets/credit-card.svg)
 
 
