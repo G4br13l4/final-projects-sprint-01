@@ -1,16 +1,14 @@
 
-
 function isValidCard (creditCardNumber)                                                                 {
     
     /*Pedir a usuario que ingrese número de tarjeta de crédito y
-    Guardar el número en la variable "creditCardNumber"*/
-	creditCardNumber = prompt("Ingrese por favor su número de tarjeta de crédito"); 
-    
-    //Verificar que el usuario no ingrese un campo vacío
-	if(creditCardNumber === "") {  
-	//Mandar alert para informar que ingrese su numero de tarjeta sino continuar 
-  	alert("Por favor ingrese su número de tarjeta"); 
-	}
+    Guardar el número en la variable "creditCardNumber".
+    Verificar que el usuario no ingrese un campo vacío.*/
+
+	do {
+   		var creditCardNumber = prompt("Ingrese por favor su número de tarjeta de crédito");
+
+	} while (creditCardNumber === "");
 
 	//Declarar un objeto vacío llamado "creditCardNumber_All"
 	var creditCardNumber_All = [];
@@ -25,9 +23,9 @@ function isValidCard (creditCardNumber)                                         
 	console.log(creditCardNumber_All);
 
 	/*Crear un FOR que con un IF dentro en el cual los números en un índice par se multipliquen por 2 y
-	Guardar nuevos digitos en un objeto	nuevo llamado "newObject" y Declarar "newObject" vacío*/
+	Guardar nuevos digitos en un array	nuevo llamado "newArray" y Declarar "newObject" vacío*/
 
-	var newObject= [];
+	var newArray= [];
 	for(var j = 0; j < creditCardNumber_All.length; j++) 					{
 		if(j % 2 !==0)											{
 			var result = creditCardNumber_All[j] * 2;
@@ -36,24 +34,24 @@ function isValidCard (creditCardNumber)                                         
 			if(result > 9)								 	{
 				result= result.toString();
 				for( var k = 0; k < result.length; k++){
-					newObject.push(result[k]);
+					newArray.push(result[k]);
 					}
 			} else                                    	    {
-				newObject.push(result);
+				newArray.push(result);
 				}
 		//y los numeros en un indice impar se mantengan igual
 		//Guardar nuevos digitos en un object nuevo llamado "newObject"	
 		}else 														{
 			result= creditCardNumber_All[j] * 1;
-			newObject.push(result);
+			newArray.push(result);
 		}
 	}
 
-	//Sumar elementos de "newObject" con un FOR y guardar en variable "sum"
+	//Sumar elementos de "newArray" con un FOR y guardar en variable "sum"
 	var sum = 0;
-	for(var m = 0; m < newObject.length; m++)			{
+	for(var m = 0; m < newArray.length; m++)			{
 	//Convertir strings de "newObject" a numbers
-	sum += parseInt(newObject[m]);
+	sum += parseInt(newArray[m]);
 	}
 
 	//Al resultado de "sum", sacar el residuo de la division entre 10 y guardar en variable "residue"
